@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate.ejs') %>
+    <style>
+        .card {
+            border-radius: 1rem;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+    </style>
+    <div class="d-flex align-items-start justify-content-center">
+        <div class="row w-100">
+            <!-- The top margin `mt-5` has been added directly to the column container of the card. -->
+            <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 mt-0 mb-5">
+                <div class="card shadow">
+                    <img src="https://images.unsplash.com/photo-1526491109672-74740652b963?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhbXBncm91bmR8ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=3000"
+                        alt="" class="card-img-top">
+                    <div class="card-body p-4">
+                        <h3 class="mb-3">Register</h3>
+    <form action="/register" method="POST" class="validated-form" novalidate>
+        <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" id="username" name="username" required autofocus>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" id="email" name="email" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <button class="btn btn-success">Register</button>
+    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

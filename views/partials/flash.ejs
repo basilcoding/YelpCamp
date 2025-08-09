@@ -1,0 +1,17 @@
+<!-- This flash is automatically shown in the page that is being rendered if the flash.req() was called with a keyword 'success' or 'error' or if passport authentication library created a message using passport.authenticate -->
+
+<% if (success && success.length) { %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <%= success %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+    <% } %>
+
+<% if (error && error.length) { %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <%= error %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+    <% } %>

@@ -1,0 +1,64 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #461c40;
+    
+    /* --- CHANGES TO FIX BACKGROUND IMAGE --- */
+    /* Set the background image URL */
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), 
+    url("https://images.unsplash.com/photo-1526491109672-74740652b963?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhbXBncm91bmR8ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=3000");
+    
+    /* Scale the image to cover the entire viewport */
+    background-size: cover;
+    
+    /* Center the image within the viewport */
+    background-position: center;
+    
+    /* Prevent the image from repeating */
+    background-repeat: no-repeat;
+    
+    /* Keep the background image fixed while scrolling for a parallax effect */
+    background-attachment: fixed;
+    /* --- END OF CHANGES --- */
+
+    color: white;
+    text-align: center;
+    margin: 0;
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+.cover-container {
+    max-width: 42em;
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+.nav-masthead .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 0.25rem solid transparent;
+    padding: 0.25rem;
+    margin: 0 0.5rem;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav-masthead .nav-link.active {
+    color: white;
+    border-bottom-color: white;
+}
+
+a.btn {
+    color: #333 !important;
+}

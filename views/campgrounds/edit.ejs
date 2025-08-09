@@ -1,0 +1,76 @@
+<% layout('layouts/boilerplate.ejs') %>
+    <div class="row">
+        <h1 class="text-center">Edit Campground</h1>
+        <div class="col-md-6 offset-md-3">
+            <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate
+                class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <!--when you submit the form, 'name' will be the name of the input { title: 'inputValue'}, -->
+                    <!--but when you put campground[title] the name of the input would be campground = { title: 'inputValue'} -->
+                    <input class="form-control" type="text" id="title" name="campground[title]"
+                        value="<%= campground.title %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]"
+                        value="<%= campground.location %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Upload Image(s)</label>
+                    <input class="form-control" type="file" id="formFileMultiple" name="image" multiple>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Campground Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" placeholder="0.00" aria-label="price"
+                            aria-describedby="price-label" id="price" name="campground[price]"
+                            value="<%= campground.price %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="campground[description]"
+                        required><%= campground.description %></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- The updated, more professional image section is now included here -->
+                <div class="mb-3">
+                    <!-- Wrap images in a responsive row -->
+                    <div class="row">
+                    <% campground.images.forEach((img, i)=> { %>
+                    <!-- The column classes are changed to `col-6` for two per row on small screens and `col-lg-4` for three per row on large screens -->
+                    <div class="col-6 col-lg-4 mb-3">
+                        <!-- Use a card with a shadow to visually group the image and checkbox -->
+                        <div class="card h-100 shadow">
+                            <!-- Set a fixed height for the image to ensure a consistent grid layout -->
+                            <img src="<%= img.thumbnail %>" class="card-img-top img-fluid" alt="" style="object-fit: cover; height: 100px;">
+                            <div class="card-body d-flex align-items-center">
+                                <!-- Use Bootstrap's standard form-check for a cleaner look -->
+                                <div class="form-check m-0">
+                                    <input type="checkbox" id="image-<%= i %>" name="deleteImages[]" value="<%= img.filename %>" class="form-check-input">
+                                    <label for="image-<%= i %>" class="form-check-label">Delete?</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+                    <button class="btn btn-info">Update Campground</button>
+                </div>
+            </form>
+            <a href="/campgrounds/<%= campground._id %>">Back To Campground</a>
+        </div>
+    </div>
