@@ -24,8 +24,8 @@ const dbUrl = process.env.DB_URL;
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews')
-// dbUrl
-mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp', {
+// 'mongodb://127.0.0.1:27017/yelp-camp'
+mongoose.connect(dbUrl, {
     // useNewUrlParser: true, // this is depricated
     // useCreateIndex: true, // not supported
     // useUnifiedTopology: true // this is depricated
