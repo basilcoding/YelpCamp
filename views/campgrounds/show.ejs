@@ -1,9 +1,10 @@
 <% layout('layouts/boilerplate.ejs') %>
     <link rel="stylesheet" href="/stylesheets/stars.css">
+    <link rel="stylesheet" href="/stylesheets/app.css">
 
     <div class="row">
-        <div class="col-6">
-            <div id="map"></div>
+        <div class="col-md-6">
+            <div id="map" class="mb-3"></div>
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
                     <% campground.images.forEach((img, i)=> { %>
